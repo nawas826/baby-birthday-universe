@@ -5,6 +5,7 @@
  * 2. Custom MP3 audio playback if supplied in public/audio/romantic.mp3 or uploaded by user
  * 3. Chime and sparkle sound effects on interaction
  */
+import { BIRTHDAY_DATA } from '../data/birthday';
 
 class RomanticAudioEngine {
   private ctx: AudioContext | null = null;
@@ -12,7 +13,7 @@ class RomanticAudioEngine {
   private masterGain: GainNode | null = null;
   private intervalId: number | null = null;
   private customAudio: HTMLAudioElement | null = null;
-  private customAudioUrl: string | null = null;
+  private customAudioUrl: string | null = BIRTHDAY_DATA.audio?.url || null;
 
   private chordProgression = [
     [261.63, 329.63, 392.00, 493.88], // Cmaj7 (C4, E4, G4, B4)

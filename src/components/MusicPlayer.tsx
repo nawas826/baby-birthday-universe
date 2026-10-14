@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Music, Play, Pause, Volume2, Upload, Sparkles, ChevronUp, ChevronDown } from 'lucide-react';
 import { romanticAudio } from '../audio/RomanticAudio';
+import { BIRTHDAY_DATA } from '../data/birthday';
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -8,7 +9,9 @@ interface MusicPlayerProps {
 }
 
 export const MusicPlayer: React.FC<MusicPlayerProps> = ({ isPlaying, onToggle }) => {
-  const [songName, setSongName] = useState<string>('Synthesized Romantic Chords & Sparkles');
+  const [songName, setSongName] = useState<string>(
+    BIRTHDAY_DATA.audio?.title || 'Synthesized Romantic Chords & Sparkles'
+  );
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const audioInputRef = useRef<HTMLInputElement>(null);
 

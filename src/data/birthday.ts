@@ -33,6 +33,12 @@ export const BIRTHDAY_DATA = {
     age: 26,
     birthdayDate: "October 14",
   },
+  audio: {
+    // Place your song file in public/audio/song.mp3 (or change to your filename)
+    url: "/audio/song.mp3",
+    title: "Baby's Romantic Melody ♡",
+  },
+
   hero: {
     badge: "For the Love of My Life",
     headline: "Happy 26th Birthday, Baby ♡",
